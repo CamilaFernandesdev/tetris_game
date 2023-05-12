@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package: tetris_game/pixel.dart'
 void main() => runApp(GameBoard());
 
 class GameBoard extends StatefulWidget {
@@ -25,12 +25,10 @@ class _GameBoardState extends State<GameBoard> {
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: rowLenght),
-              itemBuilder: (context, index) => Center(
-                  child: Text(index.toString(),
-                      style:
-                          TextStyle(color: Colors.white60)) // Text); // Center
+              itemBuilder: (context, index) => Pixel(color: Colors.pink, child: index) // Pixel
                   ), // GridView
             ) // Scaffold
-            ));
+            );
   }
 }
+
